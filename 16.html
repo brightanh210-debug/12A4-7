@@ -1,0 +1,57 @@
+
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dương Thảo Nguyên — 12A4</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="profile-wrap">
+      <div class="profile-header">
+        <div class="avatar">🦋</div>
+        <div class="meta">
+          <h2>Dương Thảo Nguyên</h2>
+          <div class="badge">Thiên Lang</div>
+          <div>Sinh: 25/05</div>
+          <div><a href="https://www.facebook.com/share/176D7FrPxB/?mibextid=wwXIfr" target="_blank" rel="noopener">Trang cá nhân</a></div>
+        </div>
+      </div>
+      <div class="gift-center">
+        <div id="gift" class="gift-big" title="Nhấn để mở quà">🎁</div>
+      </div>
+      <div id="poem" class="poem">Cỏ non thì thầm trong gió,<br>Mềm như hồn nhỏ dịu êm chữ Thảo.<br>Đất trời trải rộng dạt dào,<br>Bao la bát ngát, ngọt ngào tiếng Nguyên.<br>Hòa trong một cõi bình yên,<br>Khẽ ngân hai tiếng… gọi tên Thảo Nguyên.</div>
+      <div class="navback"><a href="../index.html">← Về trang chính</a></div>
+    </div>
+  </div>
+  <div id="teddy" class="teddy">🧸</div>
+  <div id="flower" class="flower">🌸</div>
+  <div id="confetti" class="confetti"></div>
+  <audio id="audio" src="../assets/music/16.mp3" preload="auto" autoplay loop playsinline></audio>
+  <script>
+    const audio = document.getElementById('audio');
+    document.body.addEventListener('click', ()=>{ audio.play().catch(()=>{}); }, {once:true});
+    const teddy = document.getElementById('teddy');
+    const flower = document.getElementById('flower');
+    const confetti = document.getElementById('confetti');
+    const gift = document.getElementById('gift');
+    function pop(){
+      teddy.style.display='block';
+      flower.style.display='block';
+      for(let i=0;i<80;i++){
+        const s = document.createElement('div');
+        s.textContent = '✨';
+        s.style.position='fixed';
+        s.style.left = Math.random()*100+'%';
+        s.style.top = Math.random()*60+'%';
+        s.style.fontSize = (8+Math.random()*22)+'px';
+        confetti.appendChild(s);
+        setTimeout(()=> s.remove(), 2200);
+      }
+    }
+    gift.addEventListener('click', pop);
+  </script>
+</body>
+</html>

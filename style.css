@@ -1,0 +1,86 @@
+
+:root{
+  --pink:#ff6fa3; --pink2:#ffc2d6; --bg1:#fff6fb; --bg2:#fffaf0; --ink:#222;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  background: linear-gradient(180deg,var(--bg1),var(--bg2));
+  color: var(--ink);
+}
+
+.container{max-width:980px;margin:0 auto;padding:16px}
+.header{ text-align:center; padding: 16px 0;}
+.header h1{ margin:6px 0; color: var(--pink); }
+.header p{ margin:0; color:#555; }
+
+.search-row{
+  display:flex; gap:8px; justify-content:center; margin: 12px 0 6px;
+}
+.search{ flex:1; max-width:520px; padding:12px 14px;
+  background:#fff; border:1px solid rgba(0,0,0,.08);
+  border-radius:12px; font-size:16px;
+}
+.btn{
+  padding:12px 14px; border:0; border-radius:12px; cursor:pointer;
+  background: linear-gradient(90deg, var(--pink), var(--pink2));
+  color:#fff; font-weight:700;
+}
+.grid{ display:grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap:14px; margin-top:8px;}
+.card{
+  background:#fff; border-radius:14px; padding:14px; text-align:center;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+.card h3{ margin:8px 0 4px; font-size:18px; color:#111;}
+.card .small{ color:#666; font-size:13px; margin:0 0 4px;}
+.card .open{ margin-top:10px }
+
+.footer{ text-align:center; color:#666; font-size:13px; margin:16px 0 24px; }
+
+/*** Profile page ***/
+.profile-wrap{
+  max-width:760px; margin: 12px auto; background: linear-gradient(180deg,#fff,#fff6fb);
+  border-radius:14px; padding:18px; box-shadow: 0 10px 26px rgba(0,0,0,.06);
+}
+.profile-header{ display:flex; align-items:center; gap:12px; flex-wrap:wrap;}
+.avatar{
+  width:96px; height:96px; border-radius:12px;
+  background: linear-gradient(180deg,#fff0f6,#fff);
+  display:flex; align-items:center; justify-content:center; font-size:44px;
+}
+.meta{ color:#333}
+.meta a{ color:#0b72ff; text-decoration:none }
+.meta a:hover{ text-decoration:underline }
+.badge{ display:inline-block; padding:4px 8px; border-radius:999px;
+  background: #ffe3ef; color:#b3004c; font-weight:700; font-size:12px; margin-right:6px;
+}
+
+.gift-center{ display:flex; justify-content:center; margin:18px 0}
+.gift-big{
+  width:170px; height:170px; border-radius:16px;
+  background: linear-gradient(180deg,#fff,#fff0f6);
+  display:flex; align-items:center; justify-content:center; font-size:76px;
+  cursor:pointer; box-shadow: 0 14px 36px rgba(0,0,0,.08);
+  animation: wiggle 1s ease-in-out infinite alternate;
+}
+@keyframes wiggle { 0%{ transform: rotate(0deg) } 50%{ transform: rotate(4deg) } 100%{ transform: rotate(-4deg) } }
+
+.poem{
+  white-space: pre-wrap; border-radius:12px; padding:14px;
+  margin-top:12px; font-size:16px; line-height:1.6; color:#111;
+  background: linear-gradient(180deg,#fff8fb,#fff);
+  border: 1px dashed rgba(0,0,0,.06);
+}
+.navback{ margin-top:14px }
+
+/* cute corners */
+.teddy, .flower { position: fixed; bottom: 18px; font-size: 40px; display:none }
+.teddy{ left: 12px } .flower{ right: 12px }
+
+/* Fireworks emoji confetti container */
+.confetti{ position: fixed; inset:0; pointer-events:none; }
+
+@media(max-width:560px){
+  .avatar{ width:84px; height:84px; font-size:38px}
+}
